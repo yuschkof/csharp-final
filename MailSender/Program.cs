@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
@@ -44,10 +45,16 @@ namespace MailSender
             client.Port = 587;
             client.EnableSsl = true;
             client.Credentials = new NetworkCredential(youAddress, youPassword); // Ваши логин и пароль
-            client.Send(mail);
-
-            Console.WriteLine("Вас приветствует клан НАС РАНО");
-
+            try
+            {
+                client.Send(mail);
+                Console.WriteLine("Вас приветствует клан НАС РАНО");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
+            }
+            
             Console.ReadKey();
         }
     }
