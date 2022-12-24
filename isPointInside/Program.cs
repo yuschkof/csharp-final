@@ -1,4 +1,6 @@
-﻿public class isPointInside
+﻿namespace isPointInside;
+
+public class isPointInside
 {
     static void Main(string[] args)
     {
@@ -8,17 +10,19 @@
         Console.WriteLine("Введите координату y точки:");
         double y = double.Parse(Console.ReadLine());
 
-        // Calculate the distance between the point and the center of the circle
-        double distance = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y + 1, 2));
+        Console.WriteLine($"Координаты  ({x},{y}) {(PointInside(x, y) ? "в круге!" : "не в круге")}");
+    }
 
-        // Check if the distance is less than or equal to the radius of the circle
+    public static bool PointInside(double x, double y)
+    {
+        double distance = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y + 1, 2));
         if (distance <= 2)
         {
-            Console.WriteLine("Точка находится в пределах круга.");
+            return true;
         }
         else
         {
-            Console.WriteLine("Точка находится за пределами круга.");
+            return false;
         }
     }
 }

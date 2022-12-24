@@ -3,21 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final", "Final\Final.csproj", "{AA55D8B5-9F57-4680-89C4-8B4F008218AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Final", "Final\Final.csproj", "{AA55D8B5-9F57-4680-89C4-8B4F008218AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumber", "PrimeNumber\PrimeNumber.csproj", "{652EDDE4-89F9-47C6-BAC8-9745004A97A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumber", "PrimeNumber\PrimeNumber.csproj", "{652EDDE4-89F9-47C6-BAC8-9745004A97A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeapYear", "LeapYear\LeapYear.csproj", "{E24663CE-5B60-44D0-80DA-2189D18DE8DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeapYear", "LeapYear\LeapYear.csproj", "{E24663CE-5B60-44D0-80DA-2189D18DE8DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isPointInside", "isPointInside\isPointInside.csproj", "{1410A0A3-7685-428C-A8CF-E22B1D21916E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "isPointInside", "isPointInside\isPointInside.csproj", "{1410A0A3-7685-428C-A8CF-E22B1D21916E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplicationTable", "MultiplicationTable\MultiplicationTable.csproj", "{C778193D-BD99-4271-B23E-058EC632D83D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplicationTable", "MultiplicationTable\MultiplicationTable.csproj", "{C778193D-BD99-4271-B23E-058EC632D83D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringSort", "StringSort\StringSort.csproj", "{5CA03DE5-DDC5-4F67-9FB1-9DBF62C45AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringSort", "StringSort\StringSort.csproj", "{5CA03DE5-DDC5-4F67-9FB1-9DBF62C45AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadKey", "ReadKey\ReadKey.csproj", "{E1B3CEF2-DB88-47FD-877C-DA83B5F2E00D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadKey", "ReadKey\ReadKey.csproj", "{E1B3CEF2-DB88-47FD-877C-DA83B5F2E00D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\MailSender.csproj", "{1EB4C7F7-B8DC-4557-9B5C-1A67761F2484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSender", "MailSender\MailSender.csproj", "{1EB4C7F7-B8DC-4557-9B5C-1A67761F2484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isPointInside.Tests", "isPointInside.Tests\isPointInside.Tests.csproj", "{46CBFBFB-AF5D-409C-A4DC-627C6B531D66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leapYear.Test", "leapYear.Test\leapYear.Test.csproj", "{4942AC13-7BCD-4621-8039-CEE7A3D90EDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{1EB4C7F7-B8DC-4557-9B5C-1A67761F2484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB4C7F7-B8DC-4557-9B5C-1A67761F2484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB4C7F7-B8DC-4557-9B5C-1A67761F2484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46CBFBFB-AF5D-409C-A4DC-627C6B531D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CBFBFB-AF5D-409C-A4DC-627C6B531D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CBFBFB-AF5D-409C-A4DC-627C6B531D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CBFBFB-AF5D-409C-A4DC-627C6B531D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4942AC13-7BCD-4621-8039-CEE7A3D90EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4942AC13-7BCD-4621-8039-CEE7A3D90EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4942AC13-7BCD-4621-8039-CEE7A3D90EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4942AC13-7BCD-4621-8039-CEE7A3D90EDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
