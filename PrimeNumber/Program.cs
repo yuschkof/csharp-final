@@ -3,20 +3,22 @@ public class PrimeNumberExample
 {
     public static void Main(string[] args)
     {
-        int n, i, m = 0, flag = 0;
+        int n;
         Console.Write("Введите число: ");
         n = int.Parse(Console.ReadLine());
-        m = n / 2;
-        for (i = 2; i <= m; i++)
-        {
-            if (n % i == 0)
-            {
-                Console.Write($"Число {n} не является простым");
-                flag = 1;
-                break;
-            }
-        }
-        if (flag == 0)
-            Console.Write($"Число {n} простое!");
+        Console.WriteLine($"Число {n} {(isPrimeNumber(n) ? "простое" : "не является простым")}");
+    }
+
+    public static bool isPrimeNumber(int number)
+    {
+        if (number == 1) return false;
+        if (number == 2) return true;
+
+        var limit = Math.Ceiling(Math.Sqrt(number));
+
+        for (int i = 2; i <= limit; ++i)
+            if (number % i == 0)
+                return false;
+        return true;
     }
 }

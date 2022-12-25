@@ -1,14 +1,19 @@
-﻿class MultiplicationTable
+﻿
+Console.WriteLine("\t\t\tТаблица умножения:");
+for (int j = 2; j < 11; j++)
 {
-    static void Main(string[] args)
+    for (int i = 2; i < 6; i++)
     {
-        for (int i = 1; i <= 10; i++)
-        {
-            for (int j = 1; j <= 10; j++)
-            {
-                Console.Write("{0,4}", i * j);
-            }
-            Console.WriteLine();
-        }
+        Console.Write($"{i} * {j} = {j * i}\t");
     }
+    Console.WriteLine();
+}
+Console.WriteLine();
+for (int j = 2; j < 11; j++)
+{
+    for (int i = 6; i < 10; i++)
+    {
+        Console.Write($"{i} * {j} = {j * i}\t");
+    }
+    Console.WriteLine();
 }

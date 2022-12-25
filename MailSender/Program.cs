@@ -10,41 +10,46 @@ namespace MailSender
     {
         static void Main(string[] args)
         {
-            // Используем регулярное выражение для проверки валидности адреса электронной почты
-            Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
 
             Console.WriteLine("Ваш логин Яндекс почты:");
-            string youAddress = Console.ReadLine();
-            if (!emailRegex.IsMatch(youAddress))
-            {
-                Console.WriteLine("Неверный емаил");
-                return;
-            }
+            string youAddress = getEmail();
 
             Console.WriteLine("Ваш пароль Яндекс почты:");
-            string youPassword = Console.ReadLine();
+            string youPassword = getPassword();
 
             Console.WriteLine("Кому насрать в почту?");
-            string toAddress = Console.ReadLine();
-            if (!emailRegex.IsMatch(toAddress))
-            {
-                Console.WriteLine("Неверный емаил");
-                return;
-            }
+            string toAddress = getEmail();
 
             Console.WriteLine("Что насрать:");
             string message = Console.ReadLine();
 
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(youAddress); // Адрес отправителя
-            mail.To.Add(new MailAddress(toAddress)); // Адрес получателя
-            mail.Body = message;
+            MailMessage mail = CreateMailMessage(youAddress, toAddress, message);
+            SmtpClient client = CreateSmtpClient(youAddress, youPassword);
+            SendEmail(client, mail);
+            Console.ReadKey();
+        }
 
+        static MailMessage CreateMailMessage(string youAddress, string toAddress, string message)
+        {
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(youAddress);
+            mail.To.Add(new MailAddress(toAddress));
+            mail.Body = message;
+            return mail;
+        }
+
+        static SmtpClient CreateSmtpClient(string youAddress, string youPassword)
+        {
             SmtpClient client = new SmtpClient();
             client.Host = "smtp.yandex.ru";
             client.Port = 587;
             client.EnableSsl = true;
-            client.Credentials = new NetworkCredential(youAddress, youPassword); // Ваши логин и пароль
+            client.Credentials = new NetworkCredential(youAddress, youPassword);
+            return client;
+        }
+
+        static void SendEmail(SmtpClient client, MailMessage mail)
+        {
             try
             {
                 client.Send(mail);
@@ -54,8 +59,34 @@ namespace MailSender
             {
                 Console.WriteLine("Ошибка: " + ex.Message);
             }
-            
-            Console.ReadKey();
         }
+
+        public static bool checkEmail(string email)
+        {
+            Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            return emailRegex.IsMatch(email);
+            
+        }
+
+        public static string getEmail()
+        {
+            string email = Console.ReadLine();
+            if (checkEmail(email))
+            {
+                return email;
+            }
+            else
+            {
+                Console.WriteLine("Неверный емаил");
+                return getEmail();
+            }
+        }
+
+        public static string getPassword()
+        {
+            return Console.ReadLine();
+        }
+
+        
     }
 }

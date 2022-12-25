@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace leapYear.Test;
 
@@ -9,18 +10,11 @@ public class leapYears
         int n;
         Console.Write("Введите год: ");
         n = int.Parse(Console.ReadLine());
-        Console.WriteLine($"Год  {n} {(leapYear(n) ? "високосный" : "не високосный")}");
+        Console.WriteLine($"Год {n} {(leapYear(n) ? "високосный" : "не високосный")}");
     }
 
     public static bool leapYear(int n)
     {
-        if (n % 4 == 0 && (n % 100 != 0 || n % 400 == 0))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (n % 4 == 0 && (n % 100 != 0 || n % 400 == 0)) ? true : false;
     }
 }

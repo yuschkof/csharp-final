@@ -14,14 +14,6 @@ public class isPointInside
 
     public static bool PointInside(double x, double y)
     {
-        double distance = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y + 1, 2));
-        if (distance <= 2)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y + 1, 2)) <= 2) ? true : false;
     }
 }
