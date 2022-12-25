@@ -2,22 +2,26 @@ namespace leapYear.Test
 {
     public class Tests
     {
-        [Test]
-        public void YearIsLeapReturnsTrue()
+        [TestCase(2004)]
+        [TestCase(2008)]
+        [TestCase(2012)]
+        [TestCase(2016)]
+        [TestCase(2020)]
+        [TestCase(2024)]
+        public void YearIsLeap(int year)
         {
-            // multiple of 400
-            Assert.True(leapYears.leapYear(2000));
-            // multiple of 4 but not 100
-            Assert.True(leapYears.leapYear(1004));
+            Assert.True(leapYears.leapYear(year));
         }
 
-        [Test]
-        public void YearIsNotLeapReturnsFalse()
+        [TestCase(2001)]
+        [TestCase(2002)]
+        [TestCase(1999)]
+        [TestCase(1998)]
+        [TestCase(1957)]
+        [TestCase(1953)]
+        public void YearIsNotLeap(int year)
         {
-            // not multiple of 4
-            Assert.False(leapYears.leapYear(2001));
-            // multiple of 100 but not 400
-            Assert.False(leapYears.leapYear(1900));
+            Assert.False(leapYears.leapYear(year));
         }
     }
 }
